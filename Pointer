@@ -1,0 +1,19 @@
+#include <stdio.h>
+
+void update(int *p,int *q) {
+    int x;
+    x=*p;
+    *p=*p+*q;
+    *q=((*q)-(x));
+    if(*q<0)
+    *q=-*q;
+}
+
+int main() {
+    int a, b;
+    scanf("%d %d", &a, &b);
+    update(&a,&b);
+    printf("%d\n%d", a, b);
+
+    return 0;
+}
