@@ -1,0 +1,24 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() 
+{
+string a,b;
+getline(cin,a);
+getline(cin,b);
+string c=a+b;
+int l1,l2;
+l1=a.size();
+l2=b.size();
+cout<<l1<<" "<<l2;
+cout<<"\n";
+cout<<c;
+cout<<"\n";
+char s;
+s=a[0];
+a[0]=b[0];
+b[0]=s;
+cout<<a<<" "<<b;
+    return 0;
+}
