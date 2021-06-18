@@ -1,0 +1,28 @@
+#include<iostream>
+using namespace std;
+int main()
+{
+    long a[5],i;
+    long summax=0,summin=0;
+    long max,min;
+    for(i=0;i<5;i++)
+    cin>>a[i];
+    max=min=a[0];
+    for(i=0;i<5;i++)
+    {
+        if(max<=a[i])
+    max=a[i];
+    if(min>=a[i])
+    min=a[i];
+    }
+     for(i=0;i<5;i++)
+    {
+        summax=summax+a[i];
+    }
+    summin=summax;
+    summin=summin-max;
+    summax=summax-min;
+    cout<<summin<<" "<<summax;
+    return 0;
+ 
+}
