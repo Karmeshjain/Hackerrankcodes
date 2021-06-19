@@ -1,0 +1,14 @@
+#include <stdio.h>
+
+void update(int *c,int *d) 
+{
+        printf("%d\n",*c+(*d));
+        printf("%d",abs(*c-(*d)));        
+}
+
+int main() {
+    int a, b;
+    scanf("%d %d", &a, &b);
+    update(&a,&b);  
+    return 0;
+}
