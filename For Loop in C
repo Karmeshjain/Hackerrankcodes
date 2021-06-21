@@ -1,0 +1,13 @@
+
+#include<stdio.h>
+int main()
+{
+    int a,b,i;
+    char str[10][10]={"","one","two","three","four","five","six","seven","eight","nine"};
+    scanf("%d %d",&a,&b);
+    for(i=a;i<=b;i++)
+    printf("%s\n",i>9?(i%2?"odd":"even"):str[i]);
+return 0;
+}
+    
+
