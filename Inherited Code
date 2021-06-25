@@ -1,0 +1,18 @@
+
+
+class BadLengthException
+{
+    private:
+    int n;
+    public:
+    BadLengthException(int error)
+    {
+     n=error;
+    }
+    int what()
+    {
+      return n;
+    }
+};
+
+
