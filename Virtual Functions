@@ -1,0 +1,48 @@
+
+ class Person
+ {   
+     public:
+     int age;
+     string name;
+     virtual void getdata()=0;
+     virtual void putdata()=0;
+ };
+ class Student:public Person
+ {
+   int marks[6];
+   public:
+   static int cur_id;
+   virtual void getdata()
+   {
+       cin>>name>>age;
+       int i;
+       for(i=0;i<6;i++)
+       cin>>marks[i];
+   }
+   virtual void putdata()
+   {
+       cout<<name<<" "<<age<<" ";
+       int i,sum=0;
+       for(i=0;i<6;i++)
+       sum=sum+marks[i];
+       cout<<sum<<" ";
+       cout<<cur_id++<<"\n";   
+   }
+ };
+ int Student::cur_id=1;
+ class Professor:public Person
+ {
+  int publications;
+  public:
+  static int cur_id;
+  virtual void getdata()
+  {
+      cin>>name>>age>>publications;
+  }
+  virtual void putdata()
+  {
+      cout<<name<<" "<<age<<" "<<publications<<" "<<cur_id++<<"\n";
+  }
+ };
+ int Professor::cur_id=1;
+
