@@ -1,0 +1,29 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+    
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        double payment = scanner.nextDouble();
+        scanner.close();
+        NumberFormat currency1 = NumberFormat.getCurrencyInstance(Locale.CHINA);
+String china = currency1.format(payment);
+Locale IND = new Locale("en", "IN");
+NumberFormat india  = NumberFormat.getCurrencyInstance(IND);
+String indiap=india.format(payment);
+NumberFormat currency3 = NumberFormat.getCurrencyInstance(Locale.US);
+String us = currency3.format(payment);
+NumberFormat currency4 = NumberFormat.getCurrencyInstance(Locale.FRANCE);
+String france = currency4.format(payment);
+        // Write your code here.
+        
+        System.out.println("US: " + us);
+        System.out.println("India: " + indiap);
+        System.out.println("China: " + china);
+        System.out.println("France: " + france);
+    }
+}
