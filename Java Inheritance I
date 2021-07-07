@@ -1,0 +1,20 @@
+
+class animal
+{
+    void walk()
+    {
+        System.out.println("I am walking");
+    }
+}
+class Bird extends animal
+{
+	void fly()
+	{
+		System.out.println("I am flying");
+	}
+    void sing()
+    {
+    System.out.println("I am singing");
+    }
+}
+
