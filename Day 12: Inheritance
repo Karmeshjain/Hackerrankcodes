@@ -1,0 +1,37 @@
+
+class Student :  public Person
+{
+private:
+        vector<int> testScores;  
+    public:
+         Student(string firstname,string lastname,int id,vector<int> score):Person(firstname,lastname,id)
+         {
+             testScores=score;
+         }
+         
+         char calculate()
+         {
+             char g;
+             int sum=0,avg;
+           for(int i=0; i<testScores.size(); ++i)
+            {
+               sum+=testScores[i];
+            }
+           avg=sum/testScores.size();
+           if     (avg>=90 && avg<=100)
+                  g='O';
+           else if(avg>=80 && avg<=90)
+                  g='E';
+           else if(avg>=70 && avg<=80)
+                  g='A';
+           else if(avg>=55 && avg<=75)
+                  g='P';
+           else if(avg>=40 && avg<=55)
+                  g='D';
+           else if(avg<40)
+                  g= 'T';
+            return g;
+          
+         }
+
+};
