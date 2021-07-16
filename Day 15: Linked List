@@ -1,0 +1,16 @@
+
+
+      Node* insert(Node *head,int data)
+      {
+          //Complete this method
+          if (head == NULL){
+            return new Node(data);
+        }
+          Node *last = head;
+        while(last->next != NULL){
+            last = last->next;
+        }
+        last->next = new Node(data);
+        return head;
+      }
+
