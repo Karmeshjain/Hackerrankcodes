@@ -1,0 +1,42 @@
+
+
+// Complete the findMergeNode function below.
+
+/*
+ * For your reference:
+ *
+ * SinglyLinkedListNode {
+ *     int data;
+ *     SinglyLinkedListNode* next;
+ * };
+ *
+ */
+int findMergeNode(SinglyLinkedListNode* head1, SinglyLinkedListNode* head2) 
+{
+  SinglyLinkedListNode* trav1=head1;
+    SinglyLinkedListNode* trav2=head2;
+   
+    
+    while(trav2 != NULL){
+        
+        trav1 = head1;
+        
+        while(trav1!=NULL){
+        
+            if(trav1 == trav2){
+    
+                return trav1->data;
+            }
+            else{
+                trav1=trav1->next;
+            }
+            
+        }
+        
+        trav2 = trav2->next;
+        
+    }
+    
+    return 0;
+}
+
