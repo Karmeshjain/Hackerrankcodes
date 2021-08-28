@@ -1,0 +1,72 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+
+/*
+ * Complete the pageCount function below.
+ */
+int pageCount(int n, int p) 
+{
+    /*
+     * Write your code here.
+     */if(n==p)
+     return 0;
+     int k;
+     if((p==1||p==n))return 0; 
+    if(n%2==0)
+    k=0;
+    else
+    k=1; int fr,br;
+    if(k==1)
+    {
+     for(int i=1;i<=n;i=i+2)
+      {
+          if(i+1==p||i+2==p) 
+          fr=i/2+1;
+      }
+      for(int j=n;j>=1;j=j-2)
+      {
+         if(j==p||j-1==p)
+         br=(n-j)/2;
+      }
+    }
+    else 
+    {
+    for(int i=1;i<=n;i=i+2)
+      {
+          if(i+1==p||i+2==p) 
+          fr=i/2+1;
+      }
+      for(int i=n;i>=1;i=i-2)
+      {
+          if(i-1==p||i-2==p) 
+          br=(n-i+2)/2;
+      }
+
+    }
+if(fr>br)
+return br;
+else 
+return fr;
+}
+
+int main()
+{
+    ofstream fout(getenv("OUTPUT_PATH"));
+
+    int n;
+    cin >> n;
+    cin.ignore(numeric_limits<streamsize>::max(), '\n');
+
+    int p;
+    cin >> p;
+    cin.ignore(numeric_limits<streamsize>::max(), '\n');
+
+    int result = pageCount(n, p);
+
+    fout << result << "\n";
+
+    fout.close();
+
+    return 0;
+}
