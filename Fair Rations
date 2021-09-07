@@ -1,0 +1,33 @@
+#include <assert.h>
+#include <limits.h>
+#include <math.h>
+#include <stdbool.h>
+#include <stddef.h>
+#include <stdint.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+int main()
+{
+    int N,breadAlloc; 
+    scanf("%d",&N);
+    int *B = malloc(sizeof(int) * N);
+    for(int B_i = 0; B_i < N; B_i++){
+       scanf("%d",&B[B_i]);
+    }
+    for(int i = 0; i < N-1; i++){
+        if(B[i]%2==1){
+            B[i]++;
+            B[i+1]++;
+            breadAlloc+=2;
+        }
+    }
+    if(B[N-1]%2==1){
+        printf("NO");
+    }
+    else{
+        printf("%d",breadAlloc);
+    }
+    return 0;
+}
