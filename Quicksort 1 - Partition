@@ -1,0 +1,29 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+
+int main()
+{
+    int n;cin>>n;
+    vector<int> arr(n);
+    for(int i=0;i<n;i++)
+    {
+        cin>>arr[i];
+    }
+    int pivot=arr[0];
+    vector<int> left,right;
+    for(int j=1;j<n;j++)
+    {
+     if(pivot<arr[j])
+     right.push_back(arr[j]);
+     else
+     left.push_back(arr[j]); 
+    }
+    for(int i=0;i<left.size();i++)
+    cout<<left[i]<<" ";
+    cout<<pivot<<" ";
+    for(int i=0;i<right.size();i++)
+    cout<<right[i]<<" ";
+    return 0;
+}
+
