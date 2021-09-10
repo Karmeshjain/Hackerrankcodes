@@ -1,0 +1,33 @@
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+using namespace std;
+// Use of comparator
+//comparing function only sorts if string size is equal and keeps the larger integgers at last.
+bool myfunction (string str1,string str2) 
+{ 
+    int len1=str1.length();int len2=str2.length();
+    if(len1==len2)
+        return (str1<str2);
+    
+    return len1<len2;   
+}
+
+
+int main() {
+    int n;
+    cin>>n;
+    vector <string> arr(n);
+    for(int i=0;i<n;i++)
+        cin>>arr[i];
+    
+    
+    sort(arr.begin(),arr.end(),myfunction);
+    
+    for(int i=0;i<n;i++)
+        cout<<arr[i]<<endl;
+    
+    return 0;
+}
