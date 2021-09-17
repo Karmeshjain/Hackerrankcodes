@@ -1,0 +1,45 @@
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <set>
+#include <algorithm>
+using namespace std;
+
+
+int main() {
+    /* Enter your code here. Read input from STDIN. Print output to STDOUT */   
+   
+
+   set<int> s;
+   int temp;cin>>temp;
+
+   for(int i=0;i<temp;i++)
+   {int ch;cin>>ch;
+   switch(ch)
+   {
+       case 1:
+       int data;
+       cin>>data;s.insert(data);
+       break;
+       case 2:
+       int data1;cin>>data1;
+       s.erase(data1);
+       break;
+       case 3:
+       int data3;cin>>data3;
+       set<int>::iterator itr=s.find(data3);
+       if(itr==s.end())
+       cout<<"No"<<endl;
+       else
+       cout<<"Yes"<<endl;
+       break;
+     
+   }
+
+   }
+    return 0;
+}
+
+
+
