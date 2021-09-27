@@ -1,0 +1,1 @@
+Select distinct city from station where city not Like '[a,e,i,o,u]%[a,e,i,o,u]';
