@@ -1,0 +1,1 @@
+select Round(avg(population)) from city;
