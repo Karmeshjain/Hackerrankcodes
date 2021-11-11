@@ -1,0 +1,2 @@
+select city.name from city,country where 
+country.continent='Africa'&&city.CountryCode=country.Code;
