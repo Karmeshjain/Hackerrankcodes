@@ -1,0 +1,71 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+
+const int MAX_CHAR = 26; 
+int commonCharacters(string str[], int n) 
+{ 
+
+    bool prim[MAX_CHAR]; 
+    memset(prim, true, sizeof(prim)); 
+  
+    // for each string 
+    for (int i = 0; i < n; i++) { 
+  
+        // secondary array for common characters 
+        // Initially marked false 
+        bool sec[MAX_CHAR] = { false }; 
+  
+        for (int j = 0; str[i][j]; j++) { 
+
+            if (prim[str[i][j] - 'a']) 
+                sec[str[i][j] - 'a'] = true;  
+        } 
+        memcpy(prim, sec, MAX_CHAR); 
+    } 
+  
+    // displaying common characters 
+    int count=0;
+    for (int i = 0; i < 26; i++) 
+        if (prim[i]) 
+            count++;
+            return count; 
+} 
+int gemstones(vector<string> arr) 
+{
+    int n=arr.size();
+    string str[n];
+    for(int i=0;i<arr.size();i++)
+    {
+        str[i]=arr[i];
+    }
+    //int n = sizeof(arr)/sizeof(arr[0]); 
+     int res=commonCharacters(str, n); 
+     return res;
+}
+
+int main()
+{
+    ofstream fout(getenv("OUTPUT_PATH"));
+
+    int n;
+    cin >> n;
+    cin.ignore(numeric_limits<streamsize>::max(), '\n');
+
+    vector<string> arr(n);
+
+    for (int i = 0; i < n; i++) {
+        string arr_item;
+        getline(cin, arr_item);
+
+        arr[i] = arr_item;
+    }
+
+    int result = gemstones(arr);
+
+    fout << result << "\n";
+
+    fout.close();
+
+    return 0;
+}
