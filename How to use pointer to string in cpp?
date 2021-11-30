@@ -1,0 +1,24 @@
+void reverse(string* str, int size)
+    {
+    
+        int start = 0;
+        int end = size - 1;
+    
+        while(start < end)
+        {
+           swap((*str).at(start++),(*str).at(end--));
+        }
+    }
+    
+    
+    int main()
+    {
+        
+        string str = "Something";
+        
+        reverse(&str, str.length());
+    
+        cout << "Reversed string: " << str << endl;
+    
+        return 0;
+    }
