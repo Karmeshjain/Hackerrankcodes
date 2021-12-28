@@ -1,0 +1,21 @@
+#include <bits/stdc++.h>         //Karmesh Duggar
+using namespace std;
+#define ll long long 
+int main()
+{
+	ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    int n;
+    cin>>n;
+    string s;
+    cin>>s;
+    unordered_map<char,int> mp;
+     
+    for(int i=0;i<n;i++)
+    {
+        mp[s[i]]++;
+    }
+    cout<<min(mp['a'],mp['b']);
+
+    return 0;
+}
