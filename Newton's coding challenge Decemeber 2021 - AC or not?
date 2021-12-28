@@ -1,0 +1,15 @@
+#include <bits/stdc++.h>         //Karmesh Duggar
+using namespace std;
+#define ll long long 
+int main()
+{
+	ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    int t;
+    cin>>t;
+    if(t==1)
+    cout<<"AC";
+    else
+    cout<<"WA";
+    return 0;
+}
